@@ -2,22 +2,18 @@
                       <table class="table">
                       <thead>
                       <tr>
-                      <th>Team_id</th>
                       <th>Name</th>
                       <th>Runs</th>
                       <th>Balls</th>
                       <th>Fours</th>
                       <th>Sixes</th>
-                      <th>Status</th>
+                      <!-- <th>Status</th> -->
                       <th>Bowler</th>
                       </tr>
                       </thead>
                       <tbody>
                      <% @battings1.each do |bat| %>
                      <tr>
-                      <td>
-                          <%= bat.team_id %>
-                        </td>
                       <td>
                           <%= bat.name %>
                         </td>
@@ -32,10 +28,10 @@
                         </td>
                         <td>
                           <%= bat.sixes %>
-                        </td>
+                        </td><!-- 
                         <td>
                           <%= bat.status %>
-                        </td>
+                        </td> -->
                         <td>
                           <%= bat.bowler %>
                         </td>
@@ -49,7 +45,6 @@
                       <table class="table">
                       <thead>
                       <tr>
-                      <th>TEam_id</th>
                       <th>Name</th>
                       <th>Overs</th>
                       <th>Wides</th>
@@ -61,9 +56,6 @@
                       <tbody>
                      <% @bowlings2.each do |bowl| %>
                      <tr>
-                      <td>
-                          <%= bowl.team_id %>
-                        </td>
                       <td>
                           <%= bowl.name %>
                         </td>
