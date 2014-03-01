@@ -2,16 +2,14 @@
 
  <div class="row row-offcanvas row-offcanvas-right">
     <div class="row ">
-      <div class="col-lg-4">
-         <img  src="/assets/banner2.jpg" width="100%" >
-      </div>
-      <div class="col-lg-8">
+      <div class="col-lg-5">
+         <img src="/assets/banner2.jpg" width="100%" id="img">
+      </div>&nbsp;
+      <div class="col-lg-7">
         <div class="jumbotron" style="background:url('/assets/ball.jpg') center no-repeat;">
           <h3 id ="text-glow" style="color:#fff; width:50%"><strong><%= score.team1 %></strong> Vs <strong><%= score.team2 %></strong></h3>
         </div>
-    </div/>
-      
-     
+      </div/>  
   </div>
     <div class="col-xs-12 col-sm-9">
            <div class="col-lg-12">
@@ -25,7 +23,7 @@
              <!-- Nav tabs -->
               <ul class="nav nav-tabs">
                 <li class="active">
-                  <a href="#innings1" data-toggle="tab">Ininngs </a>
+                  <a href="#innings1" data-toggle="tab">Ininngs 1</a>
                 </li>
                 <li>
                   <a href="#innings2" data-toggle="tab">Ininngs 2</a>
@@ -79,3 +77,13 @@
 
     </div>
 <% end %>
+<style type="text/css">
+@media (max-width: 767px){
+  .jumbotron{
+    height: 120px;
+  }
+  .jumbotron h3{
+    font-size: 18px;
+  }
+}
+</style>
