@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140301161651) do
+ActiveRecord::Schema.define(:version => 20140302071958) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20140301161651) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "battings", :force => true do |t|
-    t.integer  "team_id"
+    t.integer  "innings"
     t.string   "name"
     t.integer  "runs"
     t.integer  "balls"
@@ -55,31 +55,49 @@ ActiveRecord::Schema.define(:version => 20140301161651) do
     t.integer  "sixes"
     t.boolean  "status"
     t.string   "bowler"
+    t.integer  "score_id"
+    t.integer  "team_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+  add_index "battings", ["score_id"], :name => "index_battings_on_score_id"
+  add_index "battings", ["team_id"], :name => "index_battings_on_team_id"
+
   create_table "bowlers", :force => true do |t|
-    t.integer  "team_id"
+    t.integer  "innings"
     t.string   "name"
     t.float    "overs"
     t.integer  "wides"
     t.integer  "noball"
     t.integer  "maidens"
     t.integer  "wkts"
+    t.integer  "score_id"
+    t.integer  "team_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+  add_index "bowlers", ["score_id"], :name => "index_bowlers_on_score_id"
+  add_index "bowlers", ["team_id"], :name => "index_bowlers_on_team_id"
+
   create_table "scores", :force => true do |t|
+    t.string   "name"
     t.string   "team1"
     t.string   "team2"
     t.string   "toss"
     t.string   "venue"
+    t.date     "date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "scoreteam1"
     t.string   "scoreteam2"
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

@@ -3,12 +3,7 @@ class ScoresController < ApplicationController
   # GET /scores.json
   def index
     @scores = Score.all
-    @bat = Batting.all
-    @battings1 = Batting.find_all_by_team_id(1)
-    @battings2 = Batting.find_all_by_team_id(2)
-    @bowlings1 = Bowler.find_all_by_team_id(1)
-    @bowlings2 = Bowler.find_all_by_team_id(2)
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @scores }
@@ -19,7 +14,7 @@ class ScoresController < ApplicationController
   # GET /scores/1.json
   def show
     @score = Score.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @score }

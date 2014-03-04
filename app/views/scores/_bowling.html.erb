@@ -1,82 +1,56 @@
 <div class="table-responsive">
-                      <table class="table">
-                      <thead>
-                      <tr>
-                      <th>Name</th>
-                      <th>Runs</th>
-                      <th>Balls</th>
-                      <th>Fours</th>
-                      <th>Sixes</th>
-                      <!-- <th>Status</th> -->
-                      <th>Bowler</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                     <% @battings2.each do |bat| %>
-                     <tr>
-                      <td>
-                          <%= bat.name %>
-                        </td>
-                        <td>
-                          <%= bat.runs %>
-                        </td>
-                        <td>
-                          <%= bat.balls %>
-                        </td>
-                        <td>
-                          <%= bat.fours %>
-                        </td>
-                        <td>
-                          <%= bat.sixes %>
-                        </td><!-- 
-                        <td>
-                          <%= bat.status %>
-                        </td> -->
-                        <td>
-                          <%= bat.bowler %>
-                        </td>
-                      </tr>
-                      <% end %>
-                      </tbody>
-                      </table>
-                      </div>  
-                        <hr>
-                      <div class="table-responsive">
-                      <table class="table">
-                      <thead>
-                      <tr>
-                      <th>Bowler</th>
-                      <th>Overs</th>
-                      <th>Wides</th>
-                      <th>Noballs</th>
-                 
-                      <th>Maidens</th>
-                      <th>Wickets</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                     <% @bowlings1.each do |bowl| %>
-                     <tr>
-                      <td>
-                          <%= bowl.name %>
-                        </td>
-                        <td>
-                          <%= bowl.overs %>
-                        </td>
-                        <td>
-                          <%= bowl.wides %>
-                        </td>
-                        <td>
-                          <%= bowl.noball %>
-                        </td>
-                        <td>
-                          <%= bowl.maidens %>
-                        </td>
-                        <td>
-                          <%= bowl.wkts %>
-                        </td>
-                      </tr>
-                      <% end %>
-                      </tbody>
-                      </table>
-                      </div>  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Runs</th>
+        <th>Balls</th>
+        <th>Fours</th>
+        <th>Sixes</th>
+        <!-- <th>Status</th> -->
+        <th>Bowler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @battings2.each do |bat| %>
+        <tr>
+          <td><%= bat.name %></td>
+          <td><%= bat.runs %></td>
+          <td><%= bat.balls %></td>
+          <td><%= bat.fours %></td>
+          <td><%= bat.sixes %></td>
+          <!-- <td><%= bat.status %></td> -->
+          <td><%= bat.bowler %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>  
+<hr>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Bowler</th>
+        <th>Overs</th>
+        <th>Wides</th>
+        <th>Noballs</th>
+
+        <th>Maidens</th>
+        <th>Wickets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bowlings2.each do |bowl| %>
+        <tr>
+          <td><%= bowl.name %></td>
+          <td><%= bowl.overs %></td>
+          <td><%= bowl.wides %></td>
+          <td><%= bowl.noball %></td>
+          <td><%= bowl.maidens %></td>
+          <td><%= bowl.wkts %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>  

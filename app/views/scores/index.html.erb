@@ -1,89 +1,33 @@
-<% @scores.each do |score| %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>S.No</td>
+        <td>Match</td>
+        <td>Team-1</td>
+        <td>Team-2</td>
+        <td>Team1-Score</td>
+        <td>Team2-Score</td>
+        <td>Venue</td>
+        <td>Score Card</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @scores.sort.each do |score| %>
+        <tr>
+          <td><%= score.id %></td>
+          <td><%= score.name %></td>
+          <td><%= score.team1 %></td>
+          <td><%= score.team2 %></td>
+          <td><%= score.scoreteam1 %></td>
+          <td><%= score.scoreteam2 %></td>
+          <td><%= score.venue %></td>
+          <td><%= link_to "Scorecard", score %></td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
- <div class="row row-offcanvas row-offcanvas-right">
-    <div class="row ">
-      <div class="col-lg-5">
-         <img src="/assets/banner2.jpg" width="100%" id="img">
-      </div>&nbsp;
-      <div class="col-lg-7">
-        <div class="jumbotron" style="background:url('/assets/ball.jpg') center no-repeat;">
-          <h3 id ="text-glow" style="color:#fff; width:50%"><strong><%= score.team1 %></strong> Vs <strong><%= score.team2 %></strong></h3>
-        </div>
-      </div/>  
-  </div>
-    <div class="col-xs-12 col-sm-9">
-           <div class="col-lg-12">
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">
-                Score Card
-              </h3>
-            </div>
-            <div class="panel-body">
-             <!-- Nav tabs -->
-              <ul class="nav nav-tabs">
-                <li class="active">
-                  <a href="#innings1" data-toggle="tab">Ininngs 1</a>
-                </li>
-                <li>
-                  <a href="#innings2" data-toggle="tab">Ininngs 2</a>
-                </li><!-- 
-                <li>
-                  <a href="#innings3" data-toggle="tab">Ininngs 3</a>
-                </li> -->
-              </ul>
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div class="tab-pane active" id="innings1">
-                    <%= render "batting" %>
-                </div>
-                <div class="tab-pane" id="innings2">
-                  <%= render "bowling" %>
-                </div><!-- 
-                <div class="tab-pane" id="innings3">
-                  <ul>
-                    <% @bat.each do |bat| %>
-                      <li>
-                        <img src="http://www.nwu.ac.za/sites/www.nwu.ac.za/files/files/p-scte/images/empty_profile.gif">
-                        <%= bat.name %><br>
-                        <%= bat.runs %>(<%= pluralize(bat.balls,"ball") %>)
-                      </li>
-                    <% end %>
-                  </ul>
-                </div> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-2 col-sm-4 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div class="list-group">
-            <b  class="list-group-item active">Todays Match</b>
-      
-            <b  class="list-group-item"><%= score.team1 %> <i>VS</i> <%= score.team2 %></b>
-            <b class="list-group-item"><%= score.toss %></b>
-      
-          </div>
-          <div class="list-group">
-            <b href="#" class="list-group-item active">Venue</b>
-            <b href="#" class="list-group-item"><%= score.venue %></b>
-          </div>
-           <div class="list-group">
-            <b href="#" class="list-group-item active">Score</b>
-            <b href="#" class="list-group-item"><%= score.team1 %>:<%= score.scoreteam1 %></b>
-            <b href ="#" class="list-group-item"><%= score.team2 %>:<%= score.scoreteam2 %></b>
-          </div>
-        </div><!--/span-->
 
-    </div>
-<% end %>
-<style type="text/css">
-@media (max-width: 767px){
-  .jumbotron{
-    height: 120px;
-  }
-  .jumbotron h3{
-    font-size: 18px;
-  }
-}
-</style>
+

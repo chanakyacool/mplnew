@@ -1,7 +1,7 @@
 class CreateBattings < ActiveRecord::Migration
   def change
     create_table :battings do |t|
-      t.integer :team_id
+      t.integer :innings
       t.string :name
       t.integer :runs
       t.integer :balls
@@ -9,8 +9,12 @@ class CreateBattings < ActiveRecord::Migration
       t.integer :sixes
       t.boolean :status
       t.string :bowler
+      t.references :score
+      t.references :team
 
       t.timestamps
     end
+    add_index :battings, :score_id
+    add_index :battings, :team_id
   end
 end

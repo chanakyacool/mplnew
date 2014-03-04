@@ -1,15 +1,19 @@
 class CreateBowlers < ActiveRecord::Migration
   def change
     create_table :bowlers do |t|
-      t.integer :team_id
+      t.integer :innings
       t.string :name
       t.float :overs
       t.integer :wides
       t.integer :noball
       t.integer :maidens
       t.integer :wkts
+      t.references :score
+      t.references :team
 
       t.timestamps
     end
+    add_index :bowlers, :score_id
+    add_index :bowlers, :team_id
   end
 end
